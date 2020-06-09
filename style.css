@@ -1,0 +1,321 @@
+.fa-redo-alt{
+    position: absolute;
+    top: 12px;
+    right: 14px;
+    color: #fff;
+}
+
+.app-container{
+    min-height: 100vh;
+    margin: 0 15px;
+}
+
+.header-container{
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    height: 45px;
+    margin-bottom: 5px;
+} 
+.drawer {
+    position: fixed;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 80%;
+    background-color: coral;
+    max-width: 300px;
+    padding: 20px 10px;
+    box-sizing: border-box;
+    transform: translateX(0px);
+    transition: transform .22s ease-in;
+    z-index: 90;
+    list-style-type: none;
+}
+.drawer ul li{
+    list-style: none;
+}
+.drawer a{
+    color: rgb(56, 56, 56);
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 26px;
+}
+.nav-link{
+    text-decoration: none;
+    font-size: 20px;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    line-height: 1.5;
+    
+}
+.backdrop {
+    z-index: 1;
+    background: rgba(0, 0, 0, .7);
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+}
+.switch{
+    position: fixed;
+    right: 128px;
+    top: 15px;
+    z-index: 2;
+}
+.menu-toggle {
+    position: fixed;
+    top: 13px;
+    left: 40px;
+    font-size: 20px;
+    cursor: pointer;
+    color: #000;
+    transition: opacity, left .22s ease-in;
+    z-index: 100;
+}
+
+.main-container{
+    display: flex;
+    flex-wrap: wrap;
+}
+.card-container{
+    width: calc(25% - 4vw);
+    margin: 0 2vw 1vw;
+}
+@media(max-width:1250px){
+    .card-container{
+        width: calc(33.333333% - 4vw);
+        margin: 0 2vw 2.5vw;
+    }
+}
+@media(max-width:900px){
+    .card-container{
+        width: calc(50% - 4vw);
+        margin: 0 2vw 4.5vw;
+    }
+}
+@media(max-width:450px){
+    .card-container{
+        width: 100%;
+        margin: 0 2vw 7.5vw;
+    }
+}
+
+.card-item{
+    border-radius: 40px/40px;
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: center;
+    background: linear-gradient(310deg, #e4f03c 0%, #3ce4f0 100%);
+    text-decoration: none;
+    overflow: hidden;
+    transition: .5s;
+}
+
+.card-item:hover{
+    cursor: pointer;
+    box-shadow: 0 10px 20px rgba(0,0,0,.8);
+    background-color: rgb(89, 201, 164);
+    transform: scale(1.05,1.05);
+}
+.card-header{
+    margin-bottom: 20px;
+    font-size: 22px;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+.card-body{
+    margin: 30px 0;
+}
+.card-body img {
+    width: 140px;
+    height: 140px;
+    border-radius: 50%;
+    border: 10px solid #fff;
+    object-fit: cover; 
+}
+
+.play{
+    background: linear-gradient(310deg,  #3c5df0  0%, #f0613c 100%);
+}
+.menu-toggle:hover {
+    opacity: .7;
+}
+
+.menu-toggle-open {
+    left: 320px;
+}
+.drawer-close {
+    transform: translateX(-300px);
+}
+
+
+/* CARDS.HTML */
+
+
+
+.card-word{
+    display: flex;
+    /* border: 1px solid black; */
+    flex-direction: column-reverse;
+    height: 250px;  
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    border-radius: 10%;
+    box-shadow: 0 10px 20px rgba(0,0,0,.4);
+} 
+.card-text-word, .card-text-translation{
+    width: 100%;
+    background-color: #fff;  
+    font-size: 25px;
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.deca {
+    position: relative;
+    transform-style: preserve-3d;
+    transition: transform .7s linear;  
+    height: 250px;
+    /* transform: rotateY(0deg);  */
+    
+  }
+ 
+  .front, .back {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    height: 100%;
+  
+    
+  }
+  .front {
+    z-index: 2;
+    transform: rotateY(0deg);
+  }
+  .back {
+    transform: rotateY(-180deg);
+  }
+
+
+  .start-game, .repeat-word{
+      padding: 8px;
+      background-color: rgb(0, 0, 0);
+      max-width: 300px;
+      text-align: center;
+      font-family: Arial, Helvetica, sans-serif;
+      color: #fff;
+      margin: 0 auto;
+      border-radius: 20px;
+  }
+  .repeat-word{
+      max-width: 200px;
+      border-radius: 20px/20px;
+  }
+  .start-game:hover, .repeat-word:hover{
+      cursor: pointer;
+      background-color: coral;
+  }
+ .success{
+     opacity: .4;
+ }
+ .finish-game{
+     
+     
+     font-size: 100px;
+     text-align: center;
+     top: 40%;
+     left: 20%;
+    border: 1px solid black;
+
+     /* z-index: 1000; */
+ }
+ .rating{
+     margin: 0 auto;
+     margin-bottom: 13px;
+     overflow: hidden;
+     display: flex;
+     max-width: 250px;
+     height: 40px;
+ }
+ .error-icon{
+    transform: scale(1, -1); 
+    color: rgb(158, 157, 157);  
+ }
+ .error-icon, .success-icon{
+    margin: 0 5px;
+ }
+ .success-icon{
+    color: rgb(255, 74, 128);
+ }
+
+
+ .parent{
+    background-color: #fff;
+    position: fixed;
+    width: 93px;
+    height: 30px;
+    border: 1px solid gray;
+    border-radius: 18%/49%;
+    transition: all .6s;
+    z-index: 100;
+    cursor: pointer;
+}
+.div-1{
+    color: rgb(255, 255, 255);
+    font-size: 14px;
+    font-family: Arial, Helvetica, sans-serif;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    position: absolute;
+    background-color: black;
+    transition: 1s;
+    top: -5px;
+    left: -1px;
+    line-height: 14px;  
+    
+}
+.div-1 span{
+    position: relative;
+    top: 6px;
+    left: 6px;
+}
+.icon-text-play, .icon-text-train{
+    position: relative;
+    color: #fff;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 14px;
+    text-transform: uppercase;
+    font-weight: 700;
+    top: 5px;
+    left: 6px;     
+}
+.icon-text-train{
+    position: relative;
+    color: gray;
+
+    
+}
+.left{
+    transform: translate(55px);
+}
+.green{
+    background: gray;
+}
+.finish-success-game, .finish-error-game{
+    background-image: url('./img/finish-success-page.jpg');
+    height: 90vh;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    border: none;
+}
+.finish-error-game{
+    background-image: url('./img/finish-error-page.png'); 
+}
+
+.disable{
+    display: none;
+}
